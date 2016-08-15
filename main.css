@@ -1,0 +1,45 @@
+body {
+
+}
+
+.panel p{
+    margin: 30px;
+}
+
+.tabs li {
+    display: inline-block;
+    border: 1px black solid;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+    background-color: lightgrey;
+    margin: 0px;
+    margin-bottom:0px;
+}
+.tabs {
+    padding:0px;
+    margin: 0px;
+}
+
+.tabs li.active {
+    background-color: lightslategrey;
+    
+}
+
+.tabs li:hover {
+    background-color: lightslategray;
+}
+
+.tab-panels .panel{
+    display: none;
+    border: 1px solid black;
+    width: 700px;
+    height: 300px;
+    background-color: gold;
+    
+}
+
+.tab-panels .panel.active {
+    display: block;
+} 

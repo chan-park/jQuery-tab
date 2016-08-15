@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="main.css" />
+    </head>
+    
+    <body>
+        
+        <div class="tab-panels">
+            <ul class="tabs">
+                <li rel="panel1" class="active">panel1</li>
+                <li rel="panel2">panel2</li>
+                <li rel="panel3">panel3</li>
+                <li rel="panel4">panel4</li>
+            </ul>  
+            
+            <div id="panel1" class="panel active">
+                <p>Content1</p>
+            </div>
+            <div id="panel2" class="panel">
+                <p>Content2</p>
+            </div>
+            <div id="panel3" class="panel">
+                <p>Content3</p>
+            </div>
+            <div id="panel4" class="panel">
+                <p>Content4</p>
+            </div>
+        </div>
+    </body>
+    
+</html>
+
+<script src="jquery-3.1.0.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.tabs li').on('click', function() {
+            var pressedTab = $(this);
+            if (pressedTab.attr('class') !== 'active') {
+                $('.tabs li.active').removeClass('active');
+                pressedTab.addClass('active');
+                var panelToShow = $('#'+pressedTab.attr('rel'));
+            
+                $('.tab-panels .panel.active').slideUp(100, function() {
+                    $(this).removeClass('active');
+                    panelToShow.slideDown(100);
+                    panelToShow.addClass('active');
+                });
+                
+                
+            }
+        })
+        
+    });
+</script>
